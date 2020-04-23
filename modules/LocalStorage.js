@@ -1,3 +1,6 @@
+{
+  /* <script src="https://kea-alt-del.dk/dxc/login.js"></script> */
+}
 localStorage.setItem("isSubscribed", "false");
 
 document.querySelector("button").onclick = function () {
