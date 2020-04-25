@@ -1,6 +1,7 @@
 import { url, apiKey } from "./urlKey";
 
-function callMethod(method, functionToCall, newListItem) {
+function manipulateEntry(method, newListItem) {
+  console.log(newListItem);
   fetch(url, {
     method: method,
     headers: {
@@ -12,10 +13,14 @@ function callMethod(method, functionToCall, newListItem) {
     body: JSON.stringify(newListItem),
   })
     .then((res) => res.json())
-    .then((data) => functionToCall(data));
+    .then((data) => testFunction(data));
 }
 
-export { callMethod };
+function testFunction(item) {
+  console.log(item);
+}
+
+export { manipulateEntry };
 
 // function postTodo(newListItem) {
 //   fetch(`https://deleteme-6090.restdb.io/rest/card`, {

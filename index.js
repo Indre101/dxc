@@ -1,19 +1,75 @@
 import "./styles/styles.scss";
-import { A } from "./modules/test";
+import { subscribe } from "./modules/LocalStorage";
+import { getCountriesData } from "./modules/selectCountry";
+import { manipulateEntry } from "./modules/selectCountry";
 
-import { callMethod } from "./modules/Postingdata";
-callMethod("get", showData);
+window.addEventListener("DOMContentLoaded", init);
 
-function showData(data) {
-  console.log(data);
+function init() {
+  getCountriesData();
+  document.querySelector("form").addEventListener("submit", submitForm);
 }
 
-let item = {
-  workemail: "somethinnewg@gmail.com",
-  jobtitle: "CEO",
-  country: "Denmark",
-  company: "Something",
-  firstname: "Tadas",
-  lastname: "Blinda",
+function submitForm() {
+  event.preventDefault();
+
+  const customer = {
+    firstname: "ll",
+
+    country: "denmark",
+  };
+  // const customerItem = customerData();
+  // console.log(customerItem);
+  manipulateEntry("post", customer);
+  document.querySelector("form").reset();
+  subscribe();
+}
+
+const customerData = () => {
+  const {
+    firstName,
+    lastName,
+    workemail,
+    jobtitle,
+    companyname,
+    counrtyPicked,
+  } = getCustomerDataFromForm();
+
+  const customer = {
+    firstname: firstName,
+    lastname: lastName,
+    workemail: workemail,
+    jobtitle: jobtitle,
+    company: companyname,
+    country: counrtyPicked,
+  };
+
+  return customer;
 };
-callMethod("post", showData, item);
+
+function getCustomerDataFromForm() {
+  const fullName = document.querySelector("#fullName").value;
+  const fullNameSplit = fullName.split(" ").filter((word) => word != "");
+  const firstName = fullNameSplit[0];
+  const lastName =
+    fullNameSplit.length > 1
+      ? fullNameSplit.splice(1, fullNameSplit.length).join(" ")
+      : "Did not provide";
+  const counrtyPickederListbox = document.querySelector(
+    "#location-picker__listbox"
+  );
+  counrtyPickederListbox.classList.add("autocomplete__menu--hidden");
+  const counrtyPicked = document.querySelector("#location-picker").value;
+  const workemail = document.querySelector("#workEmail").value;
+  const companyname = document.querySelector("#companyName").value;
+  const jobtitle = document.querySelector("#jobTitle").value;
+
+  return {
+    firstName,
+    lastName,
+    counrtyPicked,
+    workemail,
+    companyname,
+    jobtitle,
+  };
+}

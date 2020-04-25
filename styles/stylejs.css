@@ -1,0 +1,23 @@
+.countryEntry {
+  height: 100px;
+  background-color: #fff;
+}
+
+.countryText {
+  position: absolute;
+  width: fit-content;
+  font-size: 1rem;
+  z-index: 2;
+
+  background-color: transparent;
+}
+
+.countryPlaceholder {
+  position: absolute;
+  font-size: 1rem;
+  z-index: 1;
+  padding: 0.59rem;
+  background-color: transparent;
+
+  color: gray;
+}
