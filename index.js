@@ -13,6 +13,7 @@ function submitForm() {
   event.preventDefault();
   const customerItem = customerData();
   manipulateEntry("post", customerItem);
+  document.querySelector("form").reset();
   resetForm();
 }
 
@@ -61,14 +62,9 @@ function getCustomerDataFromForm() {
 }
 
 function resetForm() {
-  const fullName = document.querySelector("#fullName");
-  fullName.value = "";
-  const workemail = document.querySelector("#workEmail");
-  workemail.value = "";
-  const companyname = document.querySelector("#companyName");
-  companyname.value = " ";
-  const jobtitle = document.querySelector("#jobTitle");
-  jobtitle.value = "";
-  // const counrtyPicked = document.querySelector("#location-picker");
-  // counrtyPicked.value = " ";
+  const counrtyPicked = document.querySelector("#location-picker");
+  counrtyPicked.value = "Start typing";
+  counrtyPicked.addEventListener("click", () => {
+    event.target.value = " ";
+  });
 }

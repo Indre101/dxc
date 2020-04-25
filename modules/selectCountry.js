@@ -4,15 +4,19 @@ async function getCountriesData() {
   const res = await response.json();
   const countryNames = res.map((country) => country.name);
 
+  const countryInput = document.querySelector("#location-picker");
+
   moveScandinavianCuntries(countryNames);
   accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector("#location-picker"),
+    selectElement: countryInput,
     source: countryNames,
     minLength: 1,
     displayMenu: "overlay",
     placeholder: "Start typing",
     autoselect: true,
+    defaultValue: "something",
     showAllValues: true,
+    confirmOnBlur: true,
   });
 }
 
