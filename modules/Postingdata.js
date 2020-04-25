@@ -1,60 +1,66 @@
 import { url, apiKey } from "./urlKey";
 import { subscribe } from "./LocalStorage";
 
-function manipulateEntry(method, newListItem) {
-  console.log(newListItem);
-  fetch(url, {
-    method: method,
-    headers: {
-      Accept: "application/json",
-      "Content-type": "application/json; charset=utf-8",
-      "x-apikey": apiKey,
-      "cache-control": "no-cache",
-    },
-    body: JSON.stringify(newListItem),
-  })
-    .then((res) => res.json())
-    .then((data) => testFunction(data));
-}
+async function manipulateEntry(newListItem) {
+  const sameuser = await getData(newListItem);
 
-function testFunction(item) {
-  console.log(item);
-  // subscribe();
+  if (sameuser.length > 0) {
+    newListItem.visitcount = sameuser[0].visitcount + 1;
+    const data = await fetch(`${url}/${sameuser[0]._id}`, {
+      method: "put",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json; charset=utf-8",
+        "x-apikey": apiKey,
+        "cache-control": "no-cache",
+      },
+      body: JSON.stringify(newListItem),
+    });
+    const response = await data.json();
+    testFunction(response);
+  } else {
+    const data = await fetch(url, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json; charset=utf-8",
+        "x-apikey": apiKey,
+        "cache-control": "no-cache",
+      },
+      body: JSON.stringify(newListItem),
+    });
+    const response = await data.json();
+    testFunction(response);
+  }
 }
 
 export { manipulateEntry };
 
-// function postTodo(newListItem) {
-//   fetch(`https://deleteme-6090.restdb.io/rest/card`, {
-//     method: "post",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-type": "application/json",
-//       "x-apikey": "5e9570bb436377171a0c2315",
-//       "cache-control": "no-cache",
-//     },
-//     body: JSON.stringify(newListItem),
-//   })
-//     .then((res) => res.json())
+function testFunction(item) {
+  console.log(item);
+  subscribe();
+}
 
-//     .then((todo) => {
-//       displayTodo(todo);
-//     });
-//   document.querySelector(".more-info-container").dataset.active = "false";
-// }
+async function getData(newListItem) {
+  const data = await fetch(url, {
+    method: "get",
+    headers: {
+      "Content-type": "application/json; charset=utf-8",
+      "x-apikey": apiKey,
+      "cache-control": "no-cache",
+    },
+  });
 
-// function updateTodo(event, id, newTodo) {
-//   event.preventDefault();
-//   let postData = JSON.stringify(newTodo);
-//   fetch(`https://deleteme-6090.restdb.io/rest/card/${id}`, {
-//     method: "put",
-//     headers: {
-//       "Content-Type": "application/json; charset=utf-8",
-//       "x-apikey": "5e9570bb436377171a0c2315",
-//       "cache-control": "no-cache",
-//     },
-//     body: postData,
-//   })
-//     .then((d) => d.json())
-//     .then((item) => assingUpdatedValues(item));
-// }
+  const response = await data.json();
+  const sameUser = await checkIfuserAlreadyExist(response, newListItem);
+  return sameUser;
+}
+
+function checkIfuserAlreadyExist(data, newListItem) {
+  const sameUser = data.filter(
+    (user) =>
+      user.workemail === newListItem.workemail &&
+      user.firstname === newListItem.firstname
+  );
+  return sameUser;
+}
