@@ -1,4 +1,5 @@
 import { url, apiKey } from "./urlKey";
+import { subscribe } from "./LocalStorage";
 
 function manipulateEntry(method, newListItem) {
   console.log(newListItem);
@@ -18,6 +19,7 @@ function manipulateEntry(method, newListItem) {
 
 function testFunction(item) {
   console.log(item);
+  // subscribe();
 }
 
 export { manipulateEntry };

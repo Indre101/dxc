@@ -4,9 +4,7 @@ async function getCountriesData() {
   const res = await response.json();
   const countryNames = res.map((country) => country.name);
 
-  countryNames[0] = "Denmark";
-  countryNames[1] = "Sweden";
-  countryNames[2] = "Norway";
+  moveScandinavianCuntries(countryNames);
   accessibleAutocomplete.enhanceSelectElement({
     selectElement: document.querySelector("#location-picker"),
     source: countryNames,
@@ -16,6 +14,19 @@ async function getCountriesData() {
     autoselect: true,
     showAllValues: true,
   });
+}
+
+function moveCountryPositions(array, toIndex, country) {
+  const indexOfelement = array.indexOf(country);
+  array.splice(indexOfelement, 1);
+  array.splice(toIndex, 1, country);
+}
+
+function moveScandinavianCuntries(countryNames) {
+  moveCountryPositions(countryNames, 0, "Denmark");
+  moveCountryPositions(countryNames, 1, "Sweden");
+  moveCountryPositions(countryNames, 2, "Norway");
+  moveCountryPositions(countryNames, 3, "Finland");
 }
 
 export { getCountriesData };
