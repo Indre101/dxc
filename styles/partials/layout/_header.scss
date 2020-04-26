@@ -8,5 +8,8 @@
 }
 
 nav {
+	display: flex;
 	background: var(--color-1-gray);
+	justify-content: center;
+	align-items: flex-end;
 }
