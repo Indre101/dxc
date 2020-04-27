@@ -1,8 +1,6 @@
 import { url, apiKey } from "./modules/urlKey";
 
 async function getCustomerData() {
-  document.querySelector(".preloader").dataset.active = "false";
-
   const customerId = localStorage.getItem("customerid");
   const data = await fetch(`${url}/${customerId}`, {
     method: "get",
@@ -15,11 +13,11 @@ async function getCustomerData() {
   const response = await data.json();
   checkIfsubscirbed(response);
 }
+getCustomerData();
 
 function checkIfsubscirbed(item) {
   console.log(item);
-
   !item.subscriber && item.visitcount > 1
-    ? console.log("not yet")
-    : showAsset(item);
+    ? console.log("show modal")
+    : console.log("hide modal");
 }

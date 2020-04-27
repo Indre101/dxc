@@ -2,11 +2,11 @@ import { url, apiKey } from "./urlKey";
 import { subscribe } from "./LocalStorage";
 
 async function manipulateEntry(newListItem) {
-  const sameuser = await getData(newListItem);
   document.querySelector(".preloader").dataset.active = "true";
+  const sameuser = await getData(newListItem);
+
   if (sameuser.length > 0) {
     newListItem.visitcount = sameuser[0].visitcount + 1;
-
     sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
 
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
@@ -50,7 +50,6 @@ async function getData(newListItem) {
       "cache-control": "no-cache",
     },
   });
-
   const response = await data.json();
   const sameUser = await checkIfuserAlreadyExist(response, newListItem);
   return sameUser;
