@@ -3,23 +3,23 @@
 // -----------------------------------------------------------------------------
 
 @mixin flexCenter($aligned, $direction) {
-	display: flex;
-	justify-content: center;
-	align-items: $aligned;
-	flex-direction: $direction;
+  display: flex;
+  justify-content: center;
+  align-items: $aligned;
+  flex-direction: $direction;
 }
 
 @mixin dropcap() {
-	float: left;
-	font-size: 7rem;
-	line-height: 7rem;
-	padding: 0 var(--padding);
-	color: var(--color-4-normal);
+  float: left;
+  font-size: 7rem;
+  line-height: 7rem;
+  padding: 0 var(--padding);
+  color: var(--color-4-normal);
 }
 
 @mixin line() {
-	width: 30px;
-	height: 3px;
-	background: var(--color-1-normal);
-	margin: 5px;
+  width: 30px;
+  height: 3px;
+  background: var(--color-1-gray);
+  margin: 5px;
 }
