@@ -2,6 +2,15 @@
 // This file contains all main page styles
 // -----------------------------------------------------------------------------
 
-#pageWrapper {
+.page-wrapper {
 	margin: 2rem;
+}
+
+article {
+	// padding: 0 var(--padding);
+	display: grid;
+	gap: 3rem;
+	// grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, max(50% - var(--gap), 400px)), 1fr));
+	// grid-template-columns: repeat(auto-fit, minmax(clamp(50% - var(--gap), 350px, 100%), 1fr));
 }
