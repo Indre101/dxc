@@ -32,5 +32,7 @@ nav {
 }
 
 .nav-links li {
-  margin: 0 3vw;
+  margin: 0 3vw 0 0;
+  color: var(--text-color);
+  cursor: pointer;
 }

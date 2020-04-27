@@ -1,3 +1,14 @@
 // -----------------------------------------------------------------------------
 // This file contains all main page styles
 // -----------------------------------------------------------------------------
+.pageWrapper {
+  display: grid;
+  grid-template-rows: 8vh auto;
+}
+
+#mainContainer {
+  height: 92vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
