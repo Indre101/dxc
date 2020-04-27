@@ -1,10 +1,12 @@
 import "./styles/styles.scss";
 import { getCountriesData } from "./modules/selectCountry";
 import { manipulateEntry } from "./modules/Postingdata";
+import { hamburgerMenu } from "./modules/BurgerMenu";
 
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
+  hamburgerMenu();
   getCountriesData();
   document.querySelector("form").onsubmit = function () {
     addEventListener("submit", submitForm);
