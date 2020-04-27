@@ -2,20 +2,31 @@
 // This file contains all mixins
 // -----------------------------------------------------------------------------
 
+form {
+  h2 {
+    color: black;
+  }
+}
+
 input,
 button {
   border: none;
   padding: 0.5rem;
 }
 
-textarea:invalid,
-input:invalid {
+textarea:not(:placeholder-shown):invalid,
+input:not(:placeholder-shown):invalid {
   border: 3px solid red;
   transition: var(--transition);
 }
 
-input {
+input,
+.autocomplete__hint,
+.autocomplete__input {
   transition: var(--transition);
+  border: 1px solid lightgrey;
+  height: 35px;
+  font-family: "GT-Walsheim-Pro-Regular";
 }
 
 button:hover {
@@ -24,11 +35,11 @@ button:hover {
 }
 
 .sign-up-form {
-  margin: auto;
-  background-color: var(--color-1-gray);
-  padding: 2rem;
+  align-self: center;
+  justify-self: center;
   max-width: 400px;
-  border: 2px solid black;
+  padding: 2rem;
+  border: 1px solid lightgrey;
 }
 
 .form-group {
@@ -46,8 +57,30 @@ input,
 textarea {
   display: block;
   width: 100%;
+  padding-bottom: 3px;
 }
 
 .autocomplete__input {
   background-color: #fff;
+}
+
+.form-group {
+  span {
+    display: none;
+  }
+}
+
+.checboxgroup {
+  display: flex;
+  font-size: 0.7rem;
+  input {
+    width: fit-content;
+    margin: 0 10px 0 0;
+  }
+}
+
+.sign-up-btn {
+  background-color: var(--color-1-normal);
+  width: 100px;
+  color: var(--color-1-white);
 }

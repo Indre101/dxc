@@ -5,14 +5,14 @@
 #siteHeader {
   padding: 0 3vw;
   background: var(--color-1-normal);
-  height: 8vh;
+  height: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
 
 #logo {
-  height: 7vh;
+  height: 80px;
 }
 
 #logo img {
@@ -53,17 +53,13 @@ nav {
     display: block;
   }
 
-  #siteHeader {
-    height: max-content;
-  }
-
   nav {
     margin: 3vh;
   }
 
   .nav-links {
     position: fixed;
-    margin-top: 3vh;
+    margin-top: 32px;
     background-color: black;
     margin-left: 0;
     left: 0;
@@ -79,7 +75,7 @@ nav {
 
   .nav-links li,
   .nav-links li:last-of-type {
-    margin: 0 9vw 0 0;
+    margin: 0 3vw 0 0;
     padding: 1rem;
   }
 }
