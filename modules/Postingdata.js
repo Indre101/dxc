@@ -3,7 +3,7 @@ import { subscribe } from "./LocalStorage";
 
 async function manipulateEntry(newListItem) {
   const sameuser = await getData(newListItem);
-
+  document.querySelector(".preloader").dataset.active = "true";
   if (sameuser.length > 0) {
     newListItem.visitcount = sameuser[0].visitcount + 1;
 
@@ -20,7 +20,7 @@ async function manipulateEntry(newListItem) {
       body: JSON.stringify(newListItem),
     });
     const response = await data.json();
-    checkIfsubscirbed(response);
+    showAsset(response);
   } else {
     const data = await fetch(url, {
       method: "post",
@@ -37,18 +37,8 @@ async function manipulateEntry(newListItem) {
   }
 }
 
-export { manipulateEntry };
-
 function showAsset(item) {
-  console.log(item);
-  // subscribe();
-}
-
-function checkIfsubscirbed(item) {
-  console.log(item);
-  !item.subscriber && item.visitcount > 1
-    ? console.log("not yet")
-    : showAsset(item);
+  subscribe(item);
 }
 
 async function getData(newListItem) {
@@ -74,3 +64,5 @@ function checkIfuserAlreadyExist(data, newListItem) {
   );
   return sameUser;
 }
+
+export { manipulateEntry };

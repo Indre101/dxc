@@ -1,7 +1,8 @@
 localStorage.setItem("isSubscribed", "false");
 
-function subscribe() {
+function subscribe(customerid) {
   localStorage.setItem("isSubscribed", "true");
+  localStorage.setItem("customerid", customerid._id);
   const issubscirbed = localStorage.getItem("isSubscribed");
   showUser(issubscirbed);
 }
