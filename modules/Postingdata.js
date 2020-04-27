@@ -6,6 +6,9 @@ async function manipulateEntry(newListItem) {
 
   if (sameuser.length > 0) {
     newListItem.visitcount = sameuser[0].visitcount + 1;
+
+    sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
+
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
       method: "put",
       headers: {
@@ -17,7 +20,7 @@ async function manipulateEntry(newListItem) {
       body: JSON.stringify(newListItem),
     });
     const response = await data.json();
-    testFunction(response);
+    checkIfsubscirbed(response);
   } else {
     const data = await fetch(url, {
       method: "post",
@@ -30,15 +33,22 @@ async function manipulateEntry(newListItem) {
       body: JSON.stringify(newListItem),
     });
     const response = await data.json();
-    testFunction(response);
+    showAsset(response);
   }
 }
 
 export { manipulateEntry };
 
-function testFunction(item) {
+function showAsset(item) {
   console.log(item);
-  subscribe();
+  // subscribe();
+}
+
+function checkIfsubscirbed(item) {
+  console.log(item);
+  !item.subscriber && item.visitcount > 1
+    ? console.log("not yet")
+    : showAsset(item);
 }
 
 async function getData(newListItem) {

@@ -27,6 +27,7 @@ const customerData = () => {
     jobtitle,
     companyname,
     counrtyPicked,
+    isSubscribed,
   } = getCustomerDataFromForm();
 
   return {
@@ -37,6 +38,7 @@ const customerData = () => {
     company: companyname,
     country: counrtyPicked,
     visitcount: 1,
+    subscriber: isSubscribed,
   };
 };
 
@@ -52,6 +54,8 @@ function getCustomerDataFromForm() {
   const workemail = document.querySelector("#workEmail").value;
   const companyname = document.querySelector("#companyName").value;
   const jobtitle = document.querySelector("#jobTitle").value;
+  const subscribeCheckbox = document.querySelector(".subscribe");
+  const isSubscribed = subscribeCheckbox.checked ? true : false;
 
   return {
     firstName,
@@ -60,6 +64,7 @@ function getCustomerDataFromForm() {
     workemail,
     companyname,
     jobtitle,
+    isSubscribed,
   };
 }
 
