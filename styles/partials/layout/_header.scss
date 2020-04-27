@@ -3,10 +3,34 @@
 // -----------------------------------------------------------------------------
 
 #siteHeader {
-	display: block;
-	background: var(--color-2-normal);
+  padding: 0 3vw;
+  background: var(--color-1-normal);
+  height: 8vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, auto));
+  align-items: center;
+}
+
+#logo {
+  height: 7vh;
+}
+
+#logo img {
+  object-fit: contain;
+  width: 150px;
+  height: -webkit-fill-available;
 }
 
 nav {
-	background: var(--color-1-gray);
+  justify-self: flex-end;
+  align-self: center;
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 3vw;
 }
