@@ -84,3 +84,7 @@ textarea {
   width: 100px;
   color: var(--color-1-white);
 }
+
+.sign-up-btn:disabled {
+  background-color: var(--color-1-gray);
+}
