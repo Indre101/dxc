@@ -5,8 +5,9 @@ async function manipulateEntry(newListItem) {
   showPreloader();
   const sameuser = await getData(newListItem);
   if (sameuser.length > 0) {
-    setSubsciption(newListItem, sameuser);
-    newListItem.visitcount = sameuser[0].visitcount + 1;
+    setSubscription(newListItem, sameuser);
+    console.log(newListItem);
+    increaseVisitCount(newListItem, sameuser);
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
       method: "put",
       headers: {
@@ -41,17 +42,22 @@ function showPreloader() {
     : false;
 }
 
+function increaseVisitCount(newListItem, sameuser) {
+  if (document.querySelector(".modal")) {
+    newListItem.visitcount = sameuser[0].visitcount + 1;
+  }
+}
+
 function showAsset(item) {
   if (document.querySelector(".modal")) {
-    document.querySelector(".modal").dataset.active = "false";
+    // document.querySelector(".modal").dataset.active = "false";
   } else {
     subscribe(item);
   }
 }
 
-function setSubsciption(newListItem, sameuser) {
+function setSubscription(newListItem, sameuser) {
   sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
-  sameuser[0].agreedtogdpr ? (newListItem.agreedtogdpr = true) : false;
 }
 
 async function getData(newListItem) {

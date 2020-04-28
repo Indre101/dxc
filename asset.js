@@ -1,10 +1,13 @@
 import { url, apiKey } from "./modules/urlKey";
 import { manipulateEntry } from "./modules/Postingdata";
 
+const bodyScrollLock = require("body-scroll-lock");
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  console.log("init");
   getCustomerData();
   closeModal();
 
@@ -13,6 +16,9 @@ function init() {
     const updatedInfom = addNewData();
     manipulateEntry(updatedInfom);
     document.querySelector(".page-wrapper").dataset.active = "";
+    document.querySelector(".modal").dataset.active = "false";
+    const targetElement = document.querySelector("#page-wrapper");
+    enableBodyScroll(targetElement);
   });
 }
 
@@ -27,13 +33,17 @@ async function getCustomerData() {
     },
   });
   const response = await data.json();
+  manipulateEntry(response);
   checkIfsubscirbed(response);
 }
 
 function checkIfsubscirbed(item) {
-  if ((!item.subscriber || !item.agreedtogdpr) && item.visitcount > 1) {
-    document.querySelector(".modal").dataset.active = "";
-    document.querySelector(".page-wrapper").dataset.active = "false";
+  if (!item.subscriber && item.visitcount > 1) {
+    setTimeout(() => {
+      const targetElement = document.querySelector("#page-wrapper");
+      disableBodyScroll(targetElement);
+      document.querySelector(".modal").dataset.active = "";
+    }, 10000);
   } else {
     document.querySelector(".modal").dataset.active = "false";
   }
@@ -43,6 +53,8 @@ function closeModal() {
   document.querySelector(".closeBtn").addEventListener("click", () => {
     document.querySelector(".modal").dataset.active = "false";
     document.querySelector(".page-wrapper").dataset.active = "";
+    const targetElement = document.querySelector("#page-wrapper");
+    enableBodyScroll(targetElement);
   });
 }
 
@@ -52,7 +64,6 @@ function addNewData() {
     lastName,
     workemail,
     isSubscribed,
-    agreedToGDPR,
   } = getCustomerDataFromForm();
 
   return {
@@ -60,7 +71,6 @@ function addNewData() {
     lastname: lastName,
     workemail: workemail,
     subscriber: isSubscribed,
-    agreedtogdpr: agreedToGDPR,
   };
 }
 
@@ -74,15 +84,12 @@ function getCustomerDataFromForm() {
       : "Did not provide";
   const workemail = document.querySelector("#workEmail").value;
   const subscribeCheckbox = document.querySelector(".subscribe");
-  const gdpr = document.querySelector(".checkagreement");
   const isSubscribed = subscribeCheckbox.checked ? true : false;
-  const agreedToGDPR = gdpr.checked ? true : false;
 
   return {
     firstName,
     lastName,
     workemail,
     isSubscribed,
-    agreedToGDPR,
   };
 }
