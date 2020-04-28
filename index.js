@@ -8,6 +8,15 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   hamburgerMenu();
   getCountriesData();
+
+  const checkagreement = document.querySelector(".checkagreement");
+  console.log(checkagreement);
+  checkagreement.addEventListener("click", () => {
+    checkagreement.checked
+      ? (document.querySelector(".sign-up-btn").disabled = false)
+      : (document.querySelector(".sign-up-btn").disabled = true);
+  });
+
   document.querySelector("form").onsubmit = function () {
     addEventListener("submit", submitForm);
   };
@@ -30,6 +39,7 @@ const customerData = () => {
     companyname,
     counrtyPicked,
     isSubscribed,
+    agreedToGDPR,
   } = getCustomerDataFromForm();
 
   return {
@@ -41,6 +51,7 @@ const customerData = () => {
     country: counrtyPicked,
     visitcount: 1,
     subscriber: isSubscribed,
+    agreedtogdpr: agreedToGDPR,
   };
 };
 
@@ -57,7 +68,9 @@ function getCustomerDataFromForm() {
   const companyname = document.querySelector("#companyName").value;
   const jobtitle = document.querySelector("#jobTitle").value;
   const subscribeCheckbox = document.querySelector(".subscribe");
+  const gdpr = document.querySelector(".checkagreement");
   const isSubscribed = subscribeCheckbox.checked ? true : false;
+  const agreedToGDPR = gdpr.checked ? true : false;
 
   return {
     firstName,
@@ -67,6 +80,7 @@ function getCustomerDataFromForm() {
     companyname,
     jobtitle,
     isSubscribed,
+    agreedToGDPR,
   };
 }
 
