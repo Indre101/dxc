@@ -1,22 +1,27 @@
-@import "../node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.css";
+@use "../node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.css";
 
 // 1. Configuration and helpers
-@import "partials/abstracts/variables", "partials/abstracts/mixins";
+@use "partials/abstracts/variables";
+@use "partials/abstracts/mixins";
 
 // 2. Base stuff
-@import "partials/base/base", "partials/base/fonts", "partials/base/typography",
-  "partials/base/helpers";
+@use "partials/base/base";
+@use "partials/base/fonts";
+@use "partials/base/typography";
+@use "partials/base/helpers";
 
 // 3. Layout-related sections
-@import "partials/layout/header", "partials/layout/footer",
-  "partials/layout/main";
+@use "partials/layout/header";
+@use "partials/layout/footer";
+@use "partials/layout/main";
 
 // 4. Components
-@import "partials/components/button", "partials/components/form";
+@use "partials/components/button";
+@use "partials/components/form";
 
 //Preloader
 @import "partials/components/preloader";
 
 .line {
-  @include line;
+	@include mixins.line();
 }
