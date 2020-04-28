@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="robots" content="noindex" />
@@ -9,25 +8,31 @@
 		<title>Asset</title>
 	</head>
 	<body>
-		<div class="page-wrapper">
-			<header class="page-header">
-				<div class="logo-container">
-					<a href="index.html">
-						<!-- <img src="static/images/logos/logo_dxc_vertical.svg" width="183" height="178" alt="DXC logo" id="logo" /> -->
-					</a>
+		<div id="pageWrapper">
+			<header id="siteHeader">
+				<div id="logo">
+					<img src="./static/images/logos/dxc_logo_hz_wht_rgb_300.png" width="183" height="178" alt="dxc logo" />
 				</div>
+				<nav>
+					<div id="hamburger" data-active="false">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<ul class="nav-links">
+						<li><a href="index.html">Services</a></li>
+						<li><a class="active" href="asset.html">Industries</a></li>
+						<li><a href="#">About us</a></li>
+					</ul>
+				</nav>
 			</header>
 			<main>
+				<header class="articleHeader">
+					<img src="static/images/manufacturing_image.jpg" width="1894" height="1495" alt="Manufacturing plant image" />
+					<h1>6 factors crucial to the success of industrial IoT in manufacturing</h1>
+				</header>
 				<article>
-					<header class="banner">
-						<img
-							src="static/images/manufacturing_image.jpg"
-							width="1894"
-							height="1495"
-							alt="Manufacturing plant image"
-						/>
-						<h1>6 factors crucial to the success of industrial IoT in manufacturing</h1>
-					</header>
+					<section class="centerGrid">
 					<section>
 						<p class="first-paragraph">
 							As manufacturers digitally transform their value chains, connected devices will play a major role. Getting
@@ -57,7 +62,7 @@
 						</p>
 					</section>
 					<blockquote>
-						<div class="divider"></div>
+						<!-- <div class="divider"></div> -->
 						<p>
 							The disruptive potential of IoT resides in its ability to turn businesses inside-out, transform products
 							into services, transform services into learning architectures and make us completely rethink what the
@@ -71,7 +76,7 @@
 						There are six critical success factors organizations need to consider to successfully use IIoT in their
 						digital transformation initiatives (Figure 1).
 						<figure class="asset-diagram">
-							<img src="" alt="IoT critical success factors diagram" />
+							<img src="static/images/infographics/hexagon.svg" alt="IoT critical success factors diagram" />
 							<figcaption>Figure 1. IoT critical success factors</figcaption>
 						</figure>
 					</p>
@@ -140,7 +145,7 @@
 						</p>
 					</section>
 					<blockquote>
-						<div class="divider"></div>
+						<!-- <div class="divider"></div> -->
 						<p>
 							The Internet of Things will transform business processes into IoT-enabled business processes, where things
 							and humans collaborate. We will witness an increased autonomy of smart things that will be able to
@@ -213,7 +218,7 @@
 						</p>
 					</section>
 					<blockquote>
-						<div class="divider"></div>
+						<!-- <div class="divider"></div> -->
 						<p>
 							One of the major challenges that companies face when trying to solve for revenue generating IoT solutions
 							is the fact these solutions often require disrupting the same business model that made them successful to
@@ -297,6 +302,7 @@
 						</p>
 					</section>
 				</article>
+			</section>
 			</main>
 			<footer>
 				<h3>About DXC Technology</h3>
@@ -310,6 +316,6 @@
 				</p>
 			</footer>
 		</div>
-    <script src="asset.js"></script>
+		<script src="asset.js"></script>
 	</body>
 </html>

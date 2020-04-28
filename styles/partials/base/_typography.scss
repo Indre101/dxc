@@ -4,21 +4,17 @@
 @use "partials/abstracts/mixins";
 
 body {
-
 	color: var(--color-1-normal);
 	font-family: var(--secondary-font);
 	line-height: var(--line-height);
 }
 
 p {
-	margin: var(--margin) 0;
-
-  color: var(--color-1-normal);
-  font-family: var(--secondary-font);
-  padding: 0;
- 
-  overflow: hidden;
-
+	margin-bottom: var(--margin);
+	color: var(--color-1-normal);
+	font-family: var(--secondary-font);
+	padding: 0;
+	overflow: hidden;
 }
 
 h1 {
@@ -30,7 +26,16 @@ h1 {
 }
 
 h2 {
-	color: var(--color-1-gray);
+	color: var(--color-1-normal);
+	font-size: 2rem;
+	font-family: var(--primary-font);
+}
+
+figcaption {
+	margin: 0;
+	padding: 0;
+	font-size: var(--figcaption);
+	font-weight: normal;
 }
 
 .countryText {
@@ -39,9 +44,22 @@ h2 {
 
 blockquote {
 	@include mixins.blockquote();
+	position: relative;
 }
 
-p:first-line {
+blockquote:before {
+	display: block;
+	padding-left: 10px;
+	content: "\201C";
+	font-size: 800px;
+	position: absolute;
+	left: -300px;
+	top: -450px;
+	color: var(--color-2-normal);
+	z-index: -1;
+}
+
+.first-paragraph {
 	font-weight: bolder;
 }
 

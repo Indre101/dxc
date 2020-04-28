@@ -3,80 +3,80 @@
 // -----------------------------------------------------------------------------
 
 #siteHeader {
-  padding: 0 3vw;
-  background: var(--color-1-normal);
-  height: 100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+	padding: 0 3vw;
+	margin-bottom: 2rem;
+	background: var(--color-1-normal);
+	height: 100px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
 }
 
 #logo {
-  height: 80px;
+	height: 80px;
 }
 
 #logo img {
-  object-fit: contain;
-  width: 200px;
-  height: -webkit-fill-available;
+	object-fit: contain;
+	width: 200px;
+	height: -webkit-fill-available;
 }
 
 nav {
-  justify-self: flex-end;
-  align-self: center;
-  margin-left: auto;
+	justify-self: flex-end;
+	align-self: center;
+	margin-left: auto;
 }
 
 .nav-links {
-  display: flex;
+	display: flex;
 }
 
 .nav-links li {
-  margin: 0 3vw 0 0;
-  color: var(--menu-text-color);
-  cursor: pointer;
+	margin: 0 3vw 0 0;
+	color: var(--menu-text-color);
+	cursor: pointer;
 }
 .nav-links li:last-of-type {
-  margin: 0;
+	margin: 0;
 }
 
 .nav-links a {
-  color: var(--menu-text-color);
+	color: var(--menu-text-color);
 }
 
 #hamburger {
-  display: none;
+	display: none;
 }
 
 @media only screen and (max-width: 700px) {
-  #hamburger {
-    display: block;
-  }
+	#hamburger {
+		display: block;
+	}
 
-  nav {
-    margin: 3vh;
-  }
+	nav {
+		margin: 3vh;
+	}
 
-  .nav-links {
-    position: fixed;
-    margin-top: 32px;
-    background-color: black;
-    margin-left: 0;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    text-align: right;
-    display: none;
-  }
+	.nav-links {
+		position: fixed;
+		margin-top: 32px;
+		background-color: black;
+		margin-left: 0;
+		left: 0;
+		width: 100%;
+		flex-direction: column;
+		text-align: right;
+		display: none;
+	}
 
-  #hamburger[data-active="true"] + .nav-links {
-    display: flex;
-  }
+	#hamburger[data-active="true"] + .nav-links {
+		display: flex;
+	}
 
-  .nav-links li,
-  .nav-links li:last-of-type {
-    margin: 0 3vw 0 0;
-    padding: 1rem;
-  }
-
+	.nav-links li,
+	.nav-links li:last-of-type {
+		margin: 0 3vw 0 0;
+		padding: 1rem;
+	}
 }
