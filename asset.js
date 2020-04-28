@@ -43,7 +43,7 @@ function checkIfsubscirbed(item) {
       const targetElement = document.querySelector("#page-wrapper");
       disableBodyScroll(targetElement);
       document.querySelector(".modal").dataset.active = "";
-    }, 10000);
+    }, 6000);
   } else {
     document.querySelector(".modal").dataset.active = "false";
   }
