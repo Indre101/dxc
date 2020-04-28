@@ -3,10 +3,10 @@
 // -----------------------------------------------------------------------------
 
 @mixin flexCenter($aligned, $direction) {
-	display: flex;
-	justify-content: center;
-	align-items: $aligned;
-	flex-direction: $direction;
+  display: flex;
+  justify-content: center;
+  align-items: $aligned;
+  flex-direction: $direction;
 }
 
 @mixin dropcap() {
@@ -15,13 +15,14 @@
 	line-height: 7rem;
 	padding: 1rem;
 	color: var(--color-2-normal);
+
 }
 
 @mixin line() {
-	width: 30px;
-	height: 3px;
-	background: var(--color-1-normal);
-	margin: 5px;
+  width: 30px;
+  height: 3px;
+  background: var(--color-1-gray);
+  margin: 5px;
 }
 
 @mixin blockquote() {

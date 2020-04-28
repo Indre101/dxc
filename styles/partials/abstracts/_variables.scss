@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 :root {
+
 	--gap: 2em;
 	--margin: 1.5rem;
 	--padding: 1em;
@@ -15,9 +16,9 @@
 	--transition: 0.3s ease-in-out;
 	--box-shadow: 20px 20px 0px 0px;
 
-	//filters
-	--filter-grayscale: grayscale(50%);
 
+  //filters
+  --filter-grayscale: grayscale(50%);
 	// base colors
 	// black to white
 	--base-color-1: 0;
@@ -26,17 +27,26 @@
 	--color-1-light-gray: hsla(var(--base-color-1) 0% 70% / 100%);
 	--color-1-white: hsla(var(--base-color-1) 0% 100% / 100%);
 
-	// yellow
-	--base-color-2: 56;
-	--color-2-normal: hsla(var(--base-color-2) 100% 50% / 100%);
-	--color-2-lighter: hsla(var(--base-color-2) 100% 90% / 100%);
 
-	// element colors
-	--text-color: var(--color-1-normal);
-	--link-color: var(--color-3-normal);
-	--link-bg-color: var(--color-2-normal);
-	--link-color-visited: var(--color-3-normal);
-	--link-color-focus: var(--color-3-normal);
-	--link-color-hover: var(--color-3-normal);
-	--link-color-active: var(--color-2-normal);
+  // yellow
+  --base-color-2: 56;
+  --color-2-normal: hsla(var(--base-color-2) 100% 50% / 100%);
+  --color-2-lighter: hsla(var(--base-color-2) 100% 90% / 100%);
+
+  // element colors
+  --text-color: var(--color-1-normal);
+  --link-color: var(--color-3-normal);
+  --link-bg-color: var(--color-2-normal);
+  --link-color-visited: var(--color-3-normal);
+  --link-color-focus: var(--color-3-normal);
+  --link-color-hover: var(--color-3-normal);
+  --link-color-active: var(--color-2-normal);
+
+  //colors
+  --menu-text-color: #007fa3;
+  --footer-text-color: #ebebeb;
+  //
+  //
+  // #000000
+  // #FFFF00
 }

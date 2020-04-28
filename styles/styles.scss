@@ -19,6 +19,9 @@
 @use "partials/components/button";
 @use "partials/components/form";
 
+//Preloader
+@import "partials/components/preloader";
+
 .line {
 	@include mixins.line();
 }

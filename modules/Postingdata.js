@@ -2,10 +2,13 @@ import { url, apiKey } from "./urlKey";
 import { subscribe } from "./LocalStorage";
 
 async function manipulateEntry(newListItem) {
+  document.querySelector(".preloader").dataset.active = "true";
   const sameuser = await getData(newListItem);
 
   if (sameuser.length > 0) {
     newListItem.visitcount = sameuser[0].visitcount + 1;
+    sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
+
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
       method: "put",
       headers: {
@@ -17,7 +20,7 @@ async function manipulateEntry(newListItem) {
       body: JSON.stringify(newListItem),
     });
     const response = await data.json();
-    testFunction(response);
+    showAsset(response);
   } else {
     const data = await fetch(url, {
       method: "post",
@@ -30,15 +33,12 @@ async function manipulateEntry(newListItem) {
       body: JSON.stringify(newListItem),
     });
     const response = await data.json();
-    testFunction(response);
+    showAsset(response);
   }
 }
 
-export { manipulateEntry };
-
-function testFunction(item) {
-  console.log(item);
-  subscribe();
+function showAsset(item) {
+  subscribe(item);
 }
 
 async function getData(newListItem) {
@@ -50,7 +50,6 @@ async function getData(newListItem) {
       "cache-control": "no-cache",
     },
   });
-
   const response = await data.json();
   const sameUser = await checkIfuserAlreadyExist(response, newListItem);
   return sameUser;
@@ -64,3 +63,5 @@ function checkIfuserAlreadyExist(data, newListItem) {
   );
   return sameUser;
 }
+
+export { manipulateEntry };
