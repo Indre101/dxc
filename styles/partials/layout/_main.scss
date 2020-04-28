@@ -7,7 +7,7 @@
 }
 
 #mainContainer {
-  height: calc(100vh - 100px - 80px);
+  height: calc(100vh - 100px - 90px);
   overflow: scroll;
   display: grid;
   grid-template-columns: 40% 20% 40%;
@@ -51,10 +51,6 @@
     font-weight: bold;
     p {
       line-height: 1.4rem;
-    }
-
-    h3 {
-      margin: 30px 0;
     }
   }
   p {
