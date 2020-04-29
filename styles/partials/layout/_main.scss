@@ -153,11 +153,10 @@ article {
   }
 
   .diagram {
-    grid-column: 1;
     grid-row: 1;
   }
 
   .informationBlock {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 3fr;
   }
 }
