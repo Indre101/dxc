@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="robots" content="noindex" />
@@ -9,48 +8,35 @@
 		<title>Asset</title>
 	</head>
 	<body>
-    
-      <!-- modal  -->
-    <div class="modal" data-active="false">
-      <form action="#" method="post" class="sign-up-form assetSignupform">
-        <h2>Stay informed on the latest from DXC</h2>
-        <div class="form-group">
-          <label for="fullName">Full name</label>
-          <span class="helper-text">Please enter full name</span>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            placeholder="full name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="workEmail">Work email</label>
-          <span class="helper-text">Please enter work email</span>
-          <input
-            type="email"
-            id="workEmail"
-            name="workEmail"
-            placeholder="work email"
-            required
-          />
-        </div>
+		<!-- modal  -->
+		<div class="modal" data-active="false">
+			<form action="#" method="post" class="sign-up-form assetSignupform">
+				<h2>Stay informed on the latest from DXC</h2>
+				<div class="form-group">
+					<label for="fullName">Full name</label>
+					<span class="helper-text">Please enter full name</span>
+					<input type="text" id="fullName" name="fullName" placeholder="full name" required />
+				</div>
+				<div class="form-group">
+					<label for="workEmail">Work email</label>
+					<span class="helper-text">Please enter work email</span>
+					<input type="email" id="workEmail" name="workEmail" placeholder="work email" required />
+				</div>
 
-        <div class="form-group checboxgroup">
-          <input id="subscribe" type="checkbox" class="subscribe" checked />
-          <label for="subscribe">
-            Yes, I want to receive news andimportant updates from DXC
-          </label>
-        </div>
-        <div class="form-group">
-          <button class="sign-up-btn" type="submit">Register</button>
-          <button class="closeBtn" type="button">Close</button>
-        </div>
-      </form>
-    </div>
+				<div class="form-group checboxgroup">
+					<input id="subscribe" type="checkbox" class="subscribe" checked />
+					<label for="subscribe">
+						Yes, I want to receive news andimportant updates from DXC
+					</label>
+				</div>
+				<div class="form-group">
+					<button class="sign-up-btn" type="submit">Register</button>
+					<button class="closeBtn" type="button">Close</button>
+				</div>
+			</form>
+		</div>
 
-    <!-- modal  -->
+		<!-- modal  -->
 		<div id="pageWrapper">
 			<header id="siteHeader">
 				<div id="logo">
@@ -103,7 +89,7 @@
 							concepts to maximize your chances of creating real value?
 						</p>
 					</section>
-					<blockquote>
+					<blockquote data-aos="fade-up">
 						<!-- <div class="divider"></div> -->
 						<p>
 							The disruptive potential of IoT resides in its ability to turn businesses inside-out, transform products
@@ -118,8 +104,8 @@
 						<p>
 							There are six critical success factors organizations need to consider to successfully use IIoT in their
 							digital transformation initiatives (Figure 1).
-							<figure class="asset-diagram">
-								<img src="static/images/infographics/hexagon.svg" alt="IoT critical success factors diagram" />
+							<figure class="asset-diagram" data-aos="zoom">
+								<div class="diagram"></div>
 								<figcaption>Figure 1. IoT critical success factors</figcaption>
 							</figure>
 						</p>
@@ -188,7 +174,7 @@
 							inspection frequency and therefore detect compliance issues early on.
 						</p>
 					</section>
-					<blockquote>
+					<blockquote data-aos="fade-up">
 						<!-- <div class="divider"></div> -->
 						<p>
 							The Internet of Things will transform business processes into IoT-enabled business processes, where things
@@ -261,7 +247,7 @@
 							and require a very close collaboration between the value network stakeholders.
 						</p>
 					</section>
-					<blockquote>
+					<blockquote data-aos="fade-up">
 						<!-- <div class="divider"></div> -->
 						<p>
 							One of the major challenges that companies face when trying to solve for revenue generating IoT solutions
@@ -327,7 +313,7 @@
 							solutions to the needs of our clients.
 						</p>
 					</section>
-					<section>
+					<section data-aos="fade-up">
 						<h2>About the author</h2>
 						<figure>
 							<img
@@ -361,6 +347,4 @@
 		</div>
 		<script src="asset.js"></script>
 	</body>
-
-
 </html>
