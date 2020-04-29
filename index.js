@@ -4,6 +4,7 @@ import { manipulateEntry } from "./modules/Postingdata";
 import { hamburgerMenu } from "./modules/BurgerMenu";
 import { getSVG } from "./modules/svgModule";
 import { gsap } from "gsap";
+import { intersector } from "./modules/intersectionAnim";
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -12,6 +13,7 @@ function init() {
 	getCountriesData();
 	animateForm();
 	getSVG();
+	intersector();
 	document.querySelector("form").onsubmit = function () {
 		addEventListener("submit", submitForm);
 	};

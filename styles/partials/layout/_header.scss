@@ -45,6 +45,10 @@ nav {
 .nav-links a {
 	color: var(--menu-text-color);
 	position: relative;
+	transition: var(--transition);
+	&:hover {
+		color: var(--color-1-white);
+	}
 }
 
 .nav-links a::after {
@@ -54,7 +58,7 @@ nav {
 	bottom: 0;
 	width: 100%;
 	height: 2px;
-	background: currentColor;
+	background: var(--link-underline-color);
 	transform: scaleX(0);
 	transform-origin: left;
 	transition: transform 250ms ease-in;
