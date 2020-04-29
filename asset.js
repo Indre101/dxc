@@ -27,7 +27,7 @@ function init() {
     const updatedInfom = addNewData();
     manipulateEntry(updatedInfom);
     document.querySelector(".modal").dataset.active = "false";
-    const targetElement = document.querySelector("#page-wrapper");
+    const targetElement = document.querySelector("#pageWrapper");
     enableBodyScroll(targetElement);
   });
 }
@@ -77,14 +77,14 @@ function checkIfsubscirbed(item) {
 
 function showModal() {
   document.querySelector(".modal").dataset.active = "";
-  const targetElement = document.querySelector("#page-wrapper");
+  const targetElement = document.querySelector("#pageWrapper");
   disableBodyScroll(targetElement);
 }
 
 function closeModal() {
   document.querySelector(".closeBtn").addEventListener("click", () => {
     document.querySelector(".modal").dataset.active = "false";
-    const targetElement = document.querySelector("#page-wrapper");
+    const targetElement = document.querySelector("#pageWrapper");
     enableBodyScroll(targetElement);
   });
 }
