@@ -12,7 +12,7 @@ async function getCountriesData() {
     source: countryNames,
     minLength: 1,
     displayMenu: "overlay",
-    placeholder: "Start typing",
+    placeholder: "start typing",
     autoselect: true,
     defaultValue: "Country",
     showAllValues: true,
