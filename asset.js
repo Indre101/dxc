@@ -5,8 +5,6 @@ import { manipulateEntry } from "./modules/Postingdata";
 
 intersector();
 
-
-
 const bodyScrollLock = require("body-scroll-lock");
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
@@ -21,7 +19,6 @@ function init() {
     event.preventDefault();
     const updatedInfom = addNewData();
     manipulateEntry(updatedInfom);
-    document.querySelector(".page-wrapper").dataset.active = "";
     document.querySelector(".modal").dataset.active = "false";
     const targetElement = document.querySelector("#page-wrapper");
     enableBodyScroll(targetElement);
@@ -41,7 +38,6 @@ async function getCustomerData() {
   const response = await data.json();
   manipulateEntry(response);
   checkIfsubscirbed(response);
-
 }
 
 const options = {
@@ -65,7 +61,6 @@ const modalObserver = new IntersectionObserver(function (
 options);
 
 function checkIfsubscirbed(item) {
-
   if (!item.subscriber && item.visitcount > 1) {
     modalObserver.observe(document.querySelector(".aboutAuthor"));
   } else {
@@ -83,7 +78,6 @@ function showModal() {
 function closeModal() {
   document.querySelector(".closeBtn").addEventListener("click", () => {
     document.querySelector(".modal").dataset.active = "false";
-    document.querySelector(".page-wrapper").dataset.active = "";
     const targetElement = document.querySelector("#page-wrapper");
     enableBodyScroll(targetElement);
   });
@@ -123,5 +117,4 @@ function getCustomerDataFromForm() {
     workemail,
     isSubscribed,
   };
-
 }
