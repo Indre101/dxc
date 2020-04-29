@@ -74,6 +74,14 @@ textarea {
     color: var(--menu-text-color);
     margin-right: 5px;
   }
+
+  a {
+    color: black;
+    text-decoration: underline;
+    span {
+      display: inline;
+    }
+  }
 }
 
 .instruction {
