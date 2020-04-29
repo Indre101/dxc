@@ -9,9 +9,9 @@ function subscribe(customerid) {
 
 function showUser(issubscirbed) {
   if (issubscirbed === "true") {
-    window.location = "../asset.html";
+    window.location = "/asset.html";
   } else if (issubscirbed === "false") {
-    window.location = "../index.html";
+    window.location = "/index.html";
   }
 }
 
