@@ -37,16 +37,39 @@ async function getCustomerData() {
   checkIfsubscirbed(response);
 }
 
+const options = {
+  treshold: 1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const modalObserver = new IntersectionObserver(function (
+  entries,
+  modalObserver
+) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else if (entry.isIntersecting) {
+      showModal();
+      modalObserver.unobserve(entry.target);
+    }
+  });
+},
+options);
+
 function checkIfsubscirbed(item) {
   if (!item.subscriber && item.visitcount > 1) {
-    setTimeout(() => {
-      const targetElement = document.querySelector("#page-wrapper");
-      disableBodyScroll(targetElement);
-      document.querySelector(".modal").dataset.active = "";
-    }, 6000);
+    modalObserver.observe(document.querySelector(".aboutAuthor"));
   } else {
     document.querySelector(".modal").dataset.active = "false";
   }
+}
+
+function showModal() {
+  console.log("modal");
+  document.querySelector(".modal").dataset.active = "";
+  const targetElement = document.querySelector("#page-wrapper");
+  disableBodyScroll(targetElement);
 }
 
 function closeModal() {

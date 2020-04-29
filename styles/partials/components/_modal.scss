@@ -9,8 +9,20 @@
   align-items: center;
   z-index: 3;
   background-color: #00000094;
+  animation: slideIn 0.5s ease-in 1 forwards;
+  opacity: 0;
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .modal[data-active="false"] {
   display: none;
 }
