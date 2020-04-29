@@ -89,8 +89,16 @@
           />
           <form action="#" method="post" class="sign-up-form">
             <h2>Get access to read full article</h2>
+
+            <div class="instruction">
+              (<span class="asterisk">*</span>
+              <h5>Required information</h5>
+              )
+            </div>
             <div class="form-group">
-              <label for="fullName">Full name</label>
+              <label for="fullName"
+                ><span class="asterisk">*</span>Full name</label
+              >
               <span class="helper-text">Please enter full name</span>
               <input
                 type="text"
@@ -101,7 +109,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="workEmail">Work email</label>
+              <label for="workEmail">
+                <span class="asterisk">*</span>Work email</label
+              >
               <span class="helper-text">Please enter work email</span>
               <input
                 type="email"
@@ -112,7 +122,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="companyName">Company name</label>
+              <label for="companyName">
+                <span class="asterisk">*</span>Company name</label
+              >
               <span class="helper-text">Please enter company name</span>
               <input
                 type="text"
@@ -123,7 +135,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="jobTitle">Job title</label>
+              <label for="jobTitle">
+                <span class="asterisk">*</span>Job title</label
+              >
               <input
                 name="jobTitle"
                 id="jobTitle"
@@ -134,7 +148,9 @@
             </div>
 
             <div class="form-group">
-              <label for="location-picker">Select your country</label>
+              <label for="location-picker">
+                <span class="asterisk">*</span>Select your country</label
+              >
               <span class="helper-text">Please select a country</span>
               <select id="location-picker" class="d-none" required>
                 <option value="gb"></option>

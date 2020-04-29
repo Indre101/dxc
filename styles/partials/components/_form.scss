@@ -68,6 +68,27 @@ textarea {
   span {
     display: none;
   }
+  .asterisk {
+    display: inline;
+    color: var(--menu-text-color);
+    margin-right: 5px;
+  }
+}
+
+.instruction {
+  font-size: 0.7rem;
+  color: grey;
+  display: flex;
+  margin-top: 20px;
+  .asterisk {
+    display: inline;
+    color: var(--menu-text-color);
+    margin: 0 3px;
+  }
+
+  h5 {
+    margin-right: 3px;
+  }
 }
 
 .checboxgroup {
