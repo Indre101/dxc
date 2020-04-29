@@ -2,6 +2,7 @@ import "./styles/styles.scss";
 import { getCountriesData } from "./modules/selectCountry";
 import { manipulateEntry } from "./modules/Postingdata";
 import { hamburgerMenu } from "./modules/BurgerMenu";
+import { getSVG } from "./modules/svgModule";
 import { gsap } from "gsap";
 
 window.addEventListener("DOMContentLoaded", init);
@@ -14,25 +15,6 @@ function init() {
 	document.querySelector("form").onsubmit = function () {
 		addEventListener("submit", submitForm);
 	};
-}
-
-// load svg
-async function getSVG() {
-	console.log("start");
-	let response = await fetch("images/infographics/hexagon.svg");
-	let mySvgData = await response.text();
-	document.querySelector(".diagram").innerHTML = mySvgData;
-	console.log(mySvgData);
-	fillHexagons();
-}
-
-// fill shapes
-function fillHexagons() {
-	console.log("fillHexagons");
-	document.querySelectorAll("#top, #right, #rightDown, #down, #leftDown, #left, #middle, #bottom").forEach((e) => {
-		e.classList.add("yellowFill");
-	});
-	gsap.from(".yellowFill", { delay: 3, duration: 1, y: 50, opacity: 0, stagger: 0.5 });
 }
 
 // animate form

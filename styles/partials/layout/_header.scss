@@ -37,12 +37,31 @@ nav {
 	color: var(--menu-text-color);
 	cursor: pointer;
 }
+
 .nav-links li:last-of-type {
 	margin: 0;
 }
 
 .nav-links a {
 	color: var(--menu-text-color);
+	position: relative;
+}
+
+.nav-links a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: currentColor;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 250ms ease-in;
+}
+
+.nav-links a:hover::after {
+	transform: scaleX(1);
 }
 
 #hamburger {
