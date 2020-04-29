@@ -6,8 +6,6 @@ import { getSVG } from "./modules/svgModule";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-intersector();
-
 const bodyScrollLock = require("body-scroll-lock");
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;

@@ -32,6 +32,11 @@
 	margin: 2rem;
 }
 
+.articleHeaderImage {
+	background: url("/static/images/manufacturing_image.jpg") center;
+	height: 50vh;
+}
+
 article {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -55,6 +60,10 @@ article {
 	grid-column: span 2;
 	// padding: 2rem;
 	// background-color: grey;
+}
+
+.figure-assets {
+	width: 200px;
 }
 
 // .author {
@@ -133,6 +142,9 @@ article {
 // }
 
 @media only screen and (max-width: 700px) {
+	.diagram {
+		display: none;
+	}
 	article {
 		grid-template-columns: 1fr;
 		section {

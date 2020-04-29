@@ -1,19 +1,17 @@
 // -----------------------------------------------------------------------------
 // This file contains all footer styles
 // -----------------------------------------------------------------------------
-// footer {
-// 	background: var(--color-1-normal);
-// 	height: 90px;
-// 	color: lightgray;
-// 	display: flex;
-// 	align-items: center;
-// 	padding: 0 3vw;
-// 	width: 100%;
-// 	bottom: 0;
-// 	grid-area: 2/1 / span 1 / span 3;
-// 	position: absolute;
-// 	width: 100%;
-// }
+footer {
+	background: var(--color-1-normal);
+	height: 90px;
+	color: lightgray;
+	display: flex;
+	align-items: center;
+	padding: 0 3vw;
+	width: 100%;
+	bottom: 0;
+	margin-top: 2rem;
+}
 
 .footermenu {
 	margin-left: auto;
