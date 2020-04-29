@@ -1,17 +1,12 @@
 import { url, apiKey } from "./modules/urlKey";
-
+import { hamburgerMenu } from "./modules/BurgerMenu";
 import { intersector } from "./modules/intersectionAnim";
 import { manipulateEntry } from "./modules/Postingdata";
 import { getSVG } from "./modules/svgModule";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-	duration: 1200,
-});
-
 intersector();
-getSVG();
 
 const bodyScrollLock = require("body-scroll-lock");
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
@@ -22,6 +17,11 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
 	getCustomerData();
 	closeModal();
+	hamburgerMenu();
+	getSVG();
+	AOS.init({
+		duration: 1200,
+	});
 
 	document.querySelector("form").addEventListener("submit", (event) => {
 		event.preventDefault();
