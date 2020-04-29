@@ -14,7 +14,7 @@ async function getCountriesData() {
     displayMenu: "overlay",
     placeholder: "Start typing",
     autoselect: true,
-    defaultValue: "something",
+    defaultValue: "Country",
     showAllValues: true,
     confirmOnBlur: true,
   });
