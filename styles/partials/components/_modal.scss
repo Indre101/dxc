@@ -1,0 +1,45 @@
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  background-color: #00000094;
+  animation: slideIn 0.5s ease-in 1 forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.modal[data-active="false"] {
+  display: none;
+}
+
+form.assetSignupform {
+  background-color: white;
+
+  h2 {
+    line-height: normal;
+  }
+}
+.closeBtn {
+  width: 100px;
+  margin-left: 20px;
+  border: 1px solid black;
+}
+.page-wrapper[data-active="false"] {
+  height: 100vh;
+  overflow: hidden;
+}

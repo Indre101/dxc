@@ -2,13 +2,12 @@ import { url, apiKey } from "./urlKey";
 import { subscribe } from "./LocalStorage";
 
 async function manipulateEntry(newListItem) {
-  document.querySelector(".preloader").dataset.active = "true";
+  showPreloader();
   const sameuser = await getData(newListItem);
-
   if (sameuser.length > 0) {
-    newListItem.visitcount = sameuser[0].visitcount + 1;
-    sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
-
+    setSubscription(newListItem, sameuser);
+    console.log(newListItem);
+    increaseVisitCount(newListItem, sameuser);
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
       method: "put",
       headers: {
@@ -37,8 +36,28 @@ async function manipulateEntry(newListItem) {
   }
 }
 
+function showPreloader() {
+  document.querySelector(".preloader")
+    ? (document.querySelector(".preloader").dataset.active = "true")
+    : false;
+}
+
+function increaseVisitCount(newListItem, sameuser) {
+  if (document.querySelector(".modal")) {
+    newListItem.visitcount = sameuser[0].visitcount + 1;
+  }
+}
+
 function showAsset(item) {
-  subscribe(item);
+  if (document.querySelector(".modal")) {
+    // document.querySelector(".modal").dataset.active = "false";
+  } else {
+    subscribe(item);
+  }
+}
+
+function setSubscription(newListItem, sameuser) {
+  sameuser[0].subscriber ? (newListItem.subscriber = true) : false;
 }
 
 async function getData(newListItem) {

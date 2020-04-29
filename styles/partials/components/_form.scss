@@ -65,9 +65,32 @@ textarea {
 }
 
 .form-group {
-	span {
-		display: none;
-	}
+
+  span {
+    display: none;
+  }
+  .asterisk {
+    display: inline;
+    color: var(--menu-text-color);
+    margin-right: 5px;
+  }
+}
+
+.instruction {
+  font-size: 0.7rem;
+  color: grey;
+  display: flex;
+  margin-top: 20px;
+  .asterisk {
+    display: inline;
+    color: var(--menu-text-color);
+    margin: 0 3px;
+  }
+
+  h5 {
+    margin-right: 3px;
+  }
+
 }
 
 .checboxgroup {
@@ -84,4 +107,8 @@ textarea {
 	width: 100px;
 	color: var(--color-1-normal);
 	font-weight: bold;
+}
+
+.sign-up-btn:disabled {
+  background-color: var(--color-1-gray);
 }

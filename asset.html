@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="robots" content="noindex" />
@@ -8,6 +9,48 @@
 		<title>Asset</title>
 	</head>
 	<body>
+    
+      <!-- modal  -->
+    <div class="modal" data-active="false">
+      <form action="#" method="post" class="sign-up-form assetSignupform">
+        <h2>Stay informed on the latest from DXC</h2>
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <span class="helper-text">Please enter full name</span>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="full name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="workEmail">Work email</label>
+          <span class="helper-text">Please enter work email</span>
+          <input
+            type="email"
+            id="workEmail"
+            name="workEmail"
+            placeholder="work email"
+            required
+          />
+        </div>
+
+        <div class="form-group checboxgroup">
+          <input id="subscribe" type="checkbox" class="subscribe" checked />
+          <label for="subscribe">
+            Yes, I want to receive news andimportant updates from DXC
+          </label>
+        </div>
+        <div class="form-group">
+          <button class="sign-up-btn" type="submit">Register</button>
+          <button class="closeBtn" type="button">Close</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- modal  -->
 		<div id="pageWrapper">
 			<header id="siteHeader">
 				<div id="logo">
@@ -318,4 +361,6 @@
 		</div>
 		<script src="asset.js"></script>
 	</body>
+
+
 </html>
