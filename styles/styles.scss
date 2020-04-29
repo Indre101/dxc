@@ -21,14 +21,15 @@
 @use "partials/components/form";
 @use "partials/components/svg";
 
-
-
 @use "partials/components/modal";
-
 
 //Preloader
 @import "./partials/components/preloader";
 
 .line {
   @include mixins.line();
+}
+
+.st2 {
+  font-family: "GT-Walsheim-Pro-Bold", sans-serif;
 }
