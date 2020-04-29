@@ -1,5 +1,11 @@
 import { url, apiKey } from "./modules/urlKey";
+
+import { intersector } from "./modules/intersectionAnim";
 import { manipulateEntry } from "./modules/Postingdata";
+
+intersector();
+
+
 
 const bodyScrollLock = require("body-scroll-lock");
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
@@ -35,6 +41,7 @@ async function getCustomerData() {
   const response = await data.json();
   manipulateEntry(response);
   checkIfsubscirbed(response);
+
 }
 
 const options = {
@@ -58,6 +65,7 @@ const modalObserver = new IntersectionObserver(function (
 options);
 
 function checkIfsubscirbed(item) {
+
   if (!item.subscriber && item.visitcount > 1) {
     modalObserver.observe(document.querySelector(".aboutAuthor"));
   } else {
@@ -115,4 +123,5 @@ function getCustomerDataFromForm() {
     workemail,
     isSubscribed,
   };
+
 }

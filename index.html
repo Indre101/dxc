@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="robots" content="noindex" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="robots" content="noindex" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/stylejs.css" />
+		<!-- <script src="https://kea-alt-del.dk/dxc/login.js"></script> -->
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="preloader">
+			<div class="lds-spinner">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div id="pageWrapper">
+			<header id="siteHeader">
+				<div id="logo">
+					<img src="./static/images/logos/dxc_logo_hz_wht_rgb_300.png" width="183" height="178" alt="dxc logo" />
+				</div>
+				<nav>
+					<div id="hamburger" data-active="false">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<ul class="nav-links">
+						<li><a href="index.html">Services</a></li>
+						<li><a class="active" href="asset.html">Industries</a></li>
+						<li><a href="#">About us</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<header class="articleHeader animOne">
+					<h1>
+						6 factors crucial to the success of industrial IoT in manufacturing
+					</h1>
+				</header>
+				<section class="centerGrid">
+					<section class="informationBlock animOne">
+						<div class="author">
+							<figure>
+								<img src="./static/images/landingpage/author.jpg" width="303" height="353" alt="Author" />
+								<figcaption>Peter Klement</figcaption>
+							</figure>
+						</div>
+						<div class="text">
+							<p class="first-paragraph">
+								Peter Klement is the chief technologist for manufacturing in DXC Technology’s Digital Transformation
+								Consulting, with a focus on Industry 4.0 and industrial IoT.
+							</p>
+							<p>
+								His mission is to help organizations strategically transform their businesses with the help of digital
+								technologies such as IoT, data analytics and cloud. Peter looks at new technologies from the perspective
+								of business benefits and how they can optimize operating models and foster business model innovation.
+							</p>
+						</div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/stylejs.css" />
-    <!-- <script src="https://kea-alt-del.dk/dxc/login.js"></script> -->
-    <title>DXC</title>
-  </head>
-  <body>
-    <div class="preloader">
-      <div class="lds-spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div id="pageWrapper">
-      <header id="siteHeader">
-        <div id="logo">
-          <img
-            src="./static/images/logos/dxc_logo_hz_wht_rgb_300.png"
-            width="183"
-            height="178"
-            alt="dxc logo"
-          />
-        </div>
-        <nav>
-          <div id="hamburger" data-active="false">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Services</a></li>
-            <li><a class="active" href="#">Industries</a></li>
-            <li><a href="#">About us</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <div id="mainContainer">
-          <h1>
-            6 factors crucial to the success of industrial IoT in manufacturing
-          </h1>
-          <div class="informationBlock">
-            <div class="first-half">
-              <div class="author">
-                <div>
-                  <img
-                    src="./static/images/landingpage/author.jpg"
-                    alt="Author"
-                  />
-                  <div class="text">
-                    <h3>Peter Klement</h3>
-                    <p>
-                      The chief technologist for manufacturing in DXC
-                      Technology’s Digital Transformation Consulting, with a
-                      focus on Industry 4.0 and industrial IoT.
-                    </p>
-                  </div>
-                </div>
-                <p>
-                  His mission is to help organizations strategically transform
-                  their businesses with the help of digital technologies such as
-                  IoT, data analytics and cloud. Peter looks at new technologies
-                  from the perspective of business benefits and how they can
-                  optimize operating models and foster business model
-                  innovation.
-                </p>
-              </div>
-            </div>
-          </div>
-          <img
-            class="factors"
-            src="./static/images/landingpage/bussiness.jpg"
-            alt="6 Factors"
-          />
-          <form action="#" method="post" class="sign-up-form">
-            <h2>Get access to read full article</h2>
+						<!-- svg animation -->
+						<div class="diagram"></div>
+					</section>
+					<section class="formBlock animOne">
+				  <form action="#" method="post" class="sign-up-form">
+  	<h3>Please sign up to read the full article</h3>
 
             <div class="instruction">
               (<span class="asterisk">*</span>
@@ -179,17 +165,22 @@
               <button class="sign-up-btn" type="submit">Register</button>
             </div>
           </form>
-          <footer>
-            <h4>&copy; DXC Technology Company</h4>
-            <div class="footermenu">
-              <h4>Legal</h4>
-              <h4>Privacy</h4>
-              <h4>Site map</h4>
-            </div>
-          </footer>
-        </div>
-      </main>
-    </div>
-    <script src="index.js"></script>
-  </body>
+						
+				
+					</section>
+				</section>
+			</main>
+			<footer>
+				<h4>&copy; DXC Technology Company</h4>
+				<div class="footermenu">
+					<h4>Legal</h4>
+					<h4>Privacy</h4>
+					<h4>Site map</h4>
+				</div>
+			</footer>
+		</div>
+		<script src="index.js"></script>
+	</body>
+
+  
 </html>

@@ -7,6 +7,7 @@
 		"@babel/polyfill": "7.8.7",
 		"@babel/runtime": "7.8.7",
 		"accessible-autocomplete": "^2.0.2",
+		"gsap": "^3.2.6",
 		"body-scroll-lock": "^3.0.2",
 		"parcel-bundler": "^1.12.4"
 	},

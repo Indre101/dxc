@@ -2,14 +2,19 @@ import "./styles/styles.scss";
 import { getCountriesData } from "./modules/selectCountry";
 import { manipulateEntry } from "./modules/Postingdata";
 import { hamburgerMenu } from "./modules/BurgerMenu";
+import { getSVG } from "./modules/svgModule";
+import { gsap } from "gsap";
+import { intersector } from "./modules/intersectionAnim";
 
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  hamburgerMenu();
-  getCountriesData();
-
-  const checkagreement = document.querySelector(".checkagreement");
+	hamburgerMenu();
+	getCountriesData();
+	animateForm();
+	getSVG();
+	intersector();
+ const checkagreement = document.querySelector(".checkagreement");
   console.log(checkagreement);
   checkagreement.addEventListener("click", () => {
     checkagreement.checked
@@ -21,6 +26,12 @@ function init() {
     addEventListener("submit", submitForm);
   };
 }
+
+// animate form
+function animateForm() {
+	gsap.from(".animOne", { duration: 2, y: 50, opacity: 0, stagger: 0.5 });
+}
+
 
 function submitForm() {
   event.preventDefault();
@@ -82,3 +93,4 @@ function getCustomerDataFromForm() {
     agreedToGDPR,
   };
 }
+

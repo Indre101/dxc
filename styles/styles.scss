@@ -16,9 +16,15 @@
 @use "./partials/layout/main";
 
 // 4. Components
-@use "./partials/components/button";
-@use "./partials/components/form";
+
+@use "partials/components/button";
+@use "partials/components/form";
+@use "partials/components/svg";
+
+
+
 @use "partials/components/modal";
+
 
 //Preloader
 @import "./partials/components/preloader";

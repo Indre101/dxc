@@ -3,68 +3,69 @@
 // -----------------------------------------------------------------------------
 
 form {
-  h2 {
-    color: black;
-  }
+	h2 {
+		color: black;
+	}
 }
 
 input,
 button {
-  border: none;
-  padding: 0.5rem;
+	border: none;
+	padding: 0.5rem;
 }
 
 textarea:not(:placeholder-shown):invalid,
 input:not(:placeholder-shown):invalid {
-  border: 3px solid red;
-  transition: var(--transition);
+	border: 3px solid red;
+	transition: var(--transition);
 }
 
 input,
 .autocomplete__hint,
 .autocomplete__input {
-  transition: var(--transition);
-  border: 1px solid lightgrey;
-  height: 35px;
-  font-family: "GT-Walsheim-Pro-Regular";
+	transition: var(--transition);
+	border: 1px solid lightgrey;
+	height: 35px;
+	font-family: "GT-Walsheim-Pro-Regular";
 }
 
 button:hover {
-  background-color: var(--color-2-normal);
-  cursor: pointer;
+	background-color: var(--color-1-normal);
+	cursor: pointer;
 }
 
 .sign-up-form {
-  align-self: center;
-  justify-self: center;
-  max-width: 400px;
-  padding: 2rem;
-  border: 1px solid lightgrey;
+	align-self: center;
+	justify-self: center;
+	max-width: 400px;
+	padding: 2rem;
+	border: 10px solid var(--color-2-normal);
 }
 
 .form-group {
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 .helper-text {
-  color: var(--color-3-normal);
-  font-size: 0.8rem;
+	color: var(--color-3-normal);
+	font-size: 1rem;
 }
 
 label,
 .helper-text,
 input,
 textarea {
-  display: block;
-  width: 100%;
-  padding-bottom: 3px;
+	display: block;
+	width: 100%;
+	padding-bottom: 3px;
 }
 
 .autocomplete__input {
-  background-color: #fff;
+	background-color: #fff;
 }
 
 .form-group {
+
   span {
     display: none;
   }
@@ -89,21 +90,23 @@ textarea {
   h5 {
     margin-right: 3px;
   }
+
 }
 
 .checboxgroup {
-  display: flex;
-  font-size: 0.7rem;
-  input {
-    width: fit-content;
-    margin: 0 10px 0 0;
-  }
+	display: flex;
+	font-size: 0.7rem;
+	input {
+		width: fit-content;
+		margin: 0 10px 0 0;
+	}
 }
 
 .sign-up-btn {
-  background-color: var(--color-1-normal);
-  width: 100px;
-  color: var(--color-1-white);
+	background-color: var(--color-2-normal);
+	width: 100px;
+	color: var(--color-1-normal);
+	font-weight: bold;
 }
 
 .sign-up-btn:disabled {
