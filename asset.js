@@ -76,7 +76,6 @@ function checkIfsubscirbed(item) {
 }
 
 function showModal() {
-  console.log("modal");
   document.querySelector(".modal").dataset.active = "";
   const targetElement = document.querySelector("#page-wrapper");
   disableBodyScroll(targetElement);

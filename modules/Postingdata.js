@@ -6,7 +6,6 @@ async function manipulateEntry(newListItem) {
   const sameuser = await getData(newListItem);
   if (sameuser.length > 0) {
     setSubscription(newListItem, sameuser);
-    console.log(newListItem);
     increaseVisitCount(newListItem, sameuser);
     const data = await fetch(`${url}/${sameuser[0]._id}`, {
       method: "put",

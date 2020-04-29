@@ -2,7 +2,6 @@ import { gsap } from "gsap";
 
 // load svg
 async function getSVG() {
-  console.log("start");
   let response = await fetch("images/infographics/hexagon_with_text.svg");
   let mySvgData = await response.text();
   document.querySelector(".diagram").innerHTML = mySvgData;
@@ -11,7 +10,6 @@ async function getSVG() {
 }
 
 async function getInfoGraphics() {
-  console.log("getInfoGraphics");
   let responseOne = await fetch("images/infographics/icon_01.svg");
   let iconOne = await responseOne.text();
   let responseTwo = await fetch("images/infographics/icon_02.svg");
@@ -28,7 +26,6 @@ async function getInfoGraphics() {
 
 // fill shapes
 function fillHexagons() {
-  console.log("fillHexagons");
   document
     .querySelectorAll(
       "#top, #right, #rightDown, #down, #leftDown, #left, #middle, #bottom"
