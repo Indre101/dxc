@@ -27,7 +27,6 @@ function submitForm() {
   const customerItem = customerData();
   manipulateEntry(customerItem);
   document.querySelector("form").reset();
-  resetForm();
 }
 
 const customerData = () => {
@@ -82,12 +81,4 @@ function getCustomerDataFromForm() {
     isSubscribed,
     agreedToGDPR,
   };
-}
-
-function resetForm() {
-  const counrtyPicked = document.querySelector("#location-picker");
-  counrtyPicked.value = "Start typing";
-  counrtyPicked.addEventListener("click", () => {
-    event.target.value = " ";
-  });
 }
